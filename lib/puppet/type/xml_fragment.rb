@@ -39,6 +39,13 @@ Puppet::Type.newtype(:xml_fragment) do
     newvalues(:true, :false)
   end
 
+  newparam(:dblquotes) do
+    desc 'Tell the xml gem to use double quotes verses single quotes for values.'
+    defaultto :false
+
+    newvalues(:true, :false)
+  end
+  
   newproperty(:content) do
     desc 'A hash that describes the xml fragment.'
 
