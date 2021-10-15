@@ -22,7 +22,7 @@ module Puppet::Util
     def initialize(path)
       @does_exist = false
       @document = REXML::Document.new
-      if dblquotes
+      if @dblquotes
         @document.context[attribute_quote] = :quote
       end
       @path = path
@@ -33,7 +33,7 @@ module Puppet::Util
 
       File.open(@path, 'r') do |file_contents|
         @document = REXML::Document.new(file_contents)
-        if dblquotes
+        if @dblquotes
           @document.context[attribute_quote] = :quote
         end
       end
